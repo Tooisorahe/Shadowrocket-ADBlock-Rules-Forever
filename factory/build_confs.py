@@ -27,6 +27,7 @@ def getRulesStringFromFile(path, kind):
 
     for content in contents:
         content = content.strip('\r\n')
+        content, *opt = content.split(',')
         if not len(content):
             continue
 
@@ -45,7 +46,10 @@ def getRulesStringFromFile(path, kind):
             elif '.' not in content and len(content) > 1:
                 prefix = 'DOMAIN-KEYWORD'
 
-            ret += prefix + ',%s,%s\n' % (content, kind)
+            if opt:
+                ret += prefix + ',' + f'{content},{kind},{",".join(opt)}'
+            else:
+                ret += prefix + ',%s,%s\n' % (content, kind)
 
     return ret
 
