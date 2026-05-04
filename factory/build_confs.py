@@ -47,7 +47,7 @@ def getRulesStringFromFile(path, kind):
                 prefix = 'DOMAIN-KEYWORD'
 
             if opt:
-                ret += prefix + ',' + f'{content},{kind},{",".join(opt)}\n'
+                ret += prefix + ',' + f'{content},{kind},{",".join(opt)}\n123'
             else:
                 ret += prefix + ',%s,%s\n' % (content, kind)
 
