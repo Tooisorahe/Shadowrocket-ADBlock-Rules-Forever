@@ -2,7 +2,6 @@
 
 # APNs
 push.apple.com
-17.0.0.0/8,no-resolve
 
 # TED
 tedcdn.com
